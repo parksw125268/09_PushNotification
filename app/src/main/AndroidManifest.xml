@@ -16,6 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name = ".MyFireBaseMessagingService"
+            android:exported="false"><!--사진공유같은 이벤트는 외부로공유할 수 있는앱이 뜨는데 이런것 막음.-->
+            <intent-filter> <!--이 이벤트를 수신하겠다.-->
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
